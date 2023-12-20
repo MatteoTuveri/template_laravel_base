@@ -58,5 +58,17 @@ $fa-font-path:"../webfonts" !default;
 #cut and paste the code in welcome.blade.php in app.blade.php
 
 #add yields in app and rename 'welcome' to 'home'
+```
+## Install
+
+```bash
+#install composer
+composer install
+
+#copy and paste .env.exemple and rename .env
+
+#install new key
+php artisan key:generate
+```
 
 ```
