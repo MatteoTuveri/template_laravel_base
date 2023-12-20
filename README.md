@@ -65,7 +65,7 @@ $fa-font-path:"../webfonts" !default;
 #install composer
 composer install
 
-#copy and paste .env.exemple and rename .env
+#copy and paste .env.exemple and rename it in .env
 
 #install new key
 php artisan key:generate
