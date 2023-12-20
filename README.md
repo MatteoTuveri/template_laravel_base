@@ -70,5 +70,3 @@ composer install
 #install new key
 php artisan key:generate
 ```
-
-```
