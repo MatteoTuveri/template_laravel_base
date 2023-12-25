@@ -51,7 +51,6 @@ git branch -M main
 git remote add origin your_git_url 
 git push -u origin main
 
-
 ```
 ## Clono progetto da github 
 
@@ -95,5 +94,18 @@ php artisan make:controller NomeController
 
 
 # creo le views relative
+#cut and paste the code in welcome.blade.php in app.blade.php
 
+#add yields in app and rename 'welcome' to 'home'
+```
+## Install
+
+```bash
+#install composer
+composer install
+
+#copy and paste .env.exemple and rename it in .env
+
+#install new key
+php artisan key:generate
 ```
