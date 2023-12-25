@@ -7,14 +7,14 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Install Laravel
+## Installazione Laravel
 
 ```bash
-cd your parent_folder
+cd your parent_folder_path
 
-composer create-project --prefer-dist laravel/laravel:^9.2 project_name
+composer create-project --prefer-dist laravel/laravel:^9.2 your_project_name_here
 
-cd project_name
+cd your_project_name_here
 
 code . -r
 
@@ -23,13 +23,8 @@ php artisan serve
 ctrl + c
 
 ```
-
-## Configuration
-
->download and installation sass, bootstrap, fontawesome and vite
-
+## Configurazione Laravel
 ```bash
-
 composer require pacificdev/laravel_9_preset
 
 php artisan preset:ui bootstrap
@@ -38,25 +33,67 @@ npm install
 
 npm install --save @fortawesome/fontawesome-free
 
-# add in vite.config.js inside alias
+#in vite config aggiungo agli alias
 '~@fortawesome': path.resolve(__dirname, 'node_modules/@fortawesome'),
 
-#copy webfonts in node_modules/@fortawesome and paste in resource
+#copio la cartella dei webfont e se voglio la rinomino
 
-#add in scss/app.scss
+#installo dbal per migration e seeder
+composer require doctrine/dbal:^3.3
 
-$fa-font-path:"../webfonts" !default;
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
-@import "~@fortawesome/fontawesome-free/scss/regular";
-@import "~@fortawesome/fontawesome-free/scss/solid";
-@import "~@fortawesome/fontawesome-free/scss/brands";
 
-#add partials in scss and add in partials _variables.scss
+#comandi git
 
-#add layouts in views and inside put app.blade.php
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin your_git_url 
+git push -u origin main
 
-#cut and paste the code in welcome.blade.php in app.blade.php
 
-#add yields in app and rename 'welcome' to 'home'
+```
+## Clono progetto da github 
+
+```bash
+# copio file .env.example e lo rinomino in .env
+
+composer install
+
+php artisan key:generate
+
+npm install
+
+# creo il database da phpmyadmin
+
+# inserisco i dati per il collegamento al db in env
+
+#creo migration es.
+php artisan make:migration create_nome_tabella_table
+php artisan make:migration update_users_table --table=users
+php artisan make:migration add_phone_number_to_users_table
+
+#lanciare migration
+php artisan migrate
+
+#revert migration
+php artisan migrate:rollback
+
+#creare il model (necessario per salvare dati su db con seeder)
+php artisan make:model Nome
+
+#popolare il db  es.
+php artisan make:seeder UsersTableSeeder
+
+php artisan db:seed --class=UsersTableSeeder
+
+# preparo le rotte file web.php es. 
+Route::get('/books', [BookController::class, 'index'])->name('books.index');
+
+# creo controller
+php artisan make:controller NomeController
+
+
+# creo le views relative
 
 ```

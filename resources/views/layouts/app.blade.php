@@ -16,9 +16,12 @@
 </head>
 
 <body>
-    @include('layouts.partials.header')
-        @yield('content')
-    @include('layouts.partials.footer')
+@include('partials.header')
+
+    @yield('content')
+
+@include('partials.footer')
+
 </body>
 
 </html>
